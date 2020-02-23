@@ -18,6 +18,28 @@
 	<input type="button" value = "全选"  onclick="a();"/>
 	<input type="button" value = "全不选" onclick="b();"/>
 	<input type="button" value = "反选"  onclick="c();"/>
+	<hr>
+	<select id="select1" multiple="multiple" style="width:100px;height:100px; ">
+		<option>AAA</option>
+		<option>BBB</option>
+		<option>CCC</option>
+		<option>DDD</option>
+	</select>
+	<br>
+	<input type="button" value="选中添加到下边" onclick="OneToDown();">
+	<br>
+	<input type="button" value="全部添加到下边" onclick="AllToDown();">
+	<hr>
+	<select id="select2" multiple="multiple" style="width:100px;height:100px;">
+		<option>aaa</option>
+		<option>bbb</option>
+		<option>ccc</option>
+		<option>ddd</option>
+	</select>
+	<br>
+	<input type="button" value="选中添加到上边" onclick="OneToUp();">
+	<br>
+	<input type="button" value="全部添加到上边" onclick="AllToUp();">	
 </body>
 <script>
 	function a(){//全选
@@ -67,6 +89,51 @@
 			b();
 		}
 	}
-	
+	function OneToDown(){
+		var s1 = document.getElementById("select1");
+		var options1 = s1.getElementsByTagName("option");
+		var s2 = document.getElementById("select2");
+		for(var i =0;i<options1.length;i++){
+			var option1 = options1[i];//赋值
+			if(option1.selected == true){
+				s2.appendChild(option1);
+				i--;
+			}
+		}
+	}
+	function AllToDown(){
+		var s1 = document.getElementById("select1");
+		var options1 = s1.getElementsByTagName("option");
+		var s2 = document.getElementById("select2");
+		for(var i =0;i<options1.length;i++){
+			var option1 = options1[i];//赋值
+			s2.appendChild(option1);
+			i--;
+
+		}
+	}
+	function OneToUp(){
+		var s2 = document.getElementById("select2");
+		var options2 = s2.getElementsByTagName("option");
+		var s1 = document.getElementById("select1");
+		for(var i =0;i<options2.length;i++){
+			var option2 = options2[i];//赋值
+			if(option2.selected == true){
+				s1.appendChild(option2);
+				i--;
+			}
+		}
+	}
+	function AllToUp(){
+		var s2 = document.getElementById("select2");
+		var options2 = s2.getElementsByTagName("option");
+		var s1 = document.getElementById("select1");
+		for(var i =0;i<options2.length;i++){
+			var option2 = options2[i];//赋值
+			s1.appendChild(option2);
+			i--;
+
+		}
+	}
 	</script>
 </html>
