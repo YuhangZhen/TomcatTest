@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>复选框选择练习</title>
+</head>
+<body>
+	<input type="checkbox" id = "boxid" onclick="d();"/>全选/全不选
+	<br>
+	<input type="checkbox" name = "likethings" />篮球
+	<br>
+	<input type="checkbox" name = "likethings" />排球
+	<br>
+	<input type="checkbox" name = "likethings" />乒乓球
+	<br>
+	<input type="checkbox" name = "likethings" />足球
+	<br>
+	<input type="button" value = "全选"  onclick="a();"/>
+	<input type="button" value = "全不选" onclick="b();"/>
+	<input type="button" value = "反选"  onclick="c();"/>
+</body>
+<script>
+	function a(){//全选
+		//1.获取复选框,得到数组
+		var checkboxs=document.getElementsByName("likethings");
+		for (var i = 0;i<checkboxs.length;i++){//遍历数组
+			var checkbox = checkboxs[i];//赋值
+			checkbox.checked = true;//设置复选框选中状态
+			
+		}
+		var box = document.getElementById("boxid");
+		box.checked= true;
+		
+	}
+	function b(){//全不选
+		//1.获取复选框,得到数组
+		var checkboxs=document.getElementsByName("likethings");
+		for (var i = 0;i<checkboxs.length;i++){//遍历数组
+			var checkbox = checkboxs[i];//赋值
+			checkbox.checked = false;//设置复选框选中状态
+				
+		}
+		var box = document.getElementById("boxid");
+		box.checked= false;
+	}
+	function c(){//反选
+		//1.获取复选框,得到数组
+		var checkboxs=document.getElementsByName("likethings");
+		for (var i = 0;i<checkboxs.length;i++){//遍历数组
+			var checkbox = checkboxs[i];//赋值
+			if(checkbox.checked == true){//判断是否选中
+				checkbox.checked=false;}else{//反转
+					checkbox.checked=true;
+				}
+			}
+		var box = document.getElementById("boxid");
+		if(box.checked== true){
+			box.checked=false;}else{
+				box.checked=true;
+		}
+	}
+	function d(){
+		var checkbox = document.getElementById("boxid");
+		var TF=checkbox.checked;
+		if(TF==true){
+		a();}else{
+			b();
+		}
+	}
+	
+	</script>
+</html>

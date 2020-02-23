@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul id="ulid1">
+		<li >111</li>
+		<li >222</li>
+		<li >333</li>
+	</ul>
+	<input type="text" value="" id="text" />
+	<input type="button" value="add" onclick="add();" />
+	
+</body>
+	<script>
+		function add(){
+			var ul1 = document.getElementById("ulid1"); 
+			var text = document.getElementById("text").value; 
+			var items=document.getElementById("ulid1").getElementsByTagName("li");
+			for(i=0;i<items.length;i++){
+				//alert(items[i].innerHTML)
+				if(items[i].innerHTML!=text){
+					//var li1 = document.createElement("li");
+					//var text1 = document.createTextNode(text);
+					//li1.appendChild(text1);
+					//ul1.appendChild(li1);
+					while(i+1==items.length){//判断是否循环整个数组
+						var li1 = document.createElement("li");
+						var text1 = document.createTextNode(text);
+						li1.appendChild(text1);
+						ul1.appendChild(li1);
+						break;
+					}
+				
+				}else{
+					var j = i+1;
+					alert("此数据与第"+j+"个相同")
+					document.getElementById("text").value="";//回复初始值
+					break;
+				}
+		        }
+			
+		}
+	</script>
+</html>

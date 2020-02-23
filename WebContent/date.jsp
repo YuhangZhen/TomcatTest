@@ -4,37 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>甄宇航的毕设实验</title>
-
-<p>今天的日期是: <%= (new java.util.Date()).toLocaleString()%>
-</p>
+<title>甄宇航的毕设实验之动态时间</title>
 </head>
 <body>
-<table border="1" align="center" width="60%">
-<tr>
-<td>姓名</td>
-<td>年龄</td>
-</tr>
+此时的时间为
+<span id = "times" >
 
-<%
-for (int i=0;i<10;i++){
-%>
-<tr>
-<td>甄宇航</td>
-<td>
-<%= 25+i %>
-</td>
-</tr>
-<tr>
-<td>丁媛秀</td>
-<td>
-<%= 24+i %>
-</td>
-</tr>
-<%
-}
-%>
-
-</table>
+</span>
 </body>
+<script type="text/javascript">
+	function getTime(){
+		var date = new Date();
+		var d1= date.toLocaleString();
+		var div1=document.getElementById("times");
+		div1.innerHTML= d1;
+	}
+	setInterval("getTime();",1000);
+	</script>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="name"  value=""/>
+	<!-- input里面需要什么数据不可以不写 -->
+	<input type="button" value="try" onclick="value1();" />
+</body>
+	<script type="text/javascript">
+		var str = "abc";
+		document.write(str);
+		document.write("<hr>")
+		function value1(){
+			var input1 = document.getElementById("name");
+			alert(input1.value);
+			input1.value="";//回复初始值
+		}
+
+	</script>
+</html>
