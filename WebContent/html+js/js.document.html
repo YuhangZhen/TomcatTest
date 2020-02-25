@@ -5,17 +5,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<input type="text" id="name"  value=""/>
-	<!-- input里面需要什么数据不可以不写 -->
-	<input type="button" value="try" onclick="value1();" />
+	<form id="form1">
+		<input type="text" id="name" name="username" value="" />
+		<!-- input里面需要什么数据不可以不写 -->
+		<input type="button" value="try" onclick="value1();" />
+	</form>
 </body>
 	<script type="text/javascript">
-		var str = "abc";
-		document.write(str);
+		//var str = "abc";
+		//document.write(str);
 		document.write("<hr>")
 		function value1(){
 			var input1 = document.getElementById("name");
+			var form1 = document.getElementById("form1");
+			form1.action = "test.html"
 			alert(input1.value);
+			form1.submit();//执行submit方法
 			input1.value="";//回复初始值
 		}
 

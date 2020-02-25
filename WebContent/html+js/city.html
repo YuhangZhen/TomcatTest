@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>省市联动</title>
+</head>
+<body>
+<!-- 天气 -->
+<div id="weather-view-he"></div>
+<script>
+WIDGET = {ID: '68dvsIjhDj'};
+</script>
+<script type="text/javascript" 
+src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
+	<select id="country" onchange="change(this.value);">
+	<option value="0">--请选择--</option>
+	<option value="中国">中国</option>
+	<option value="日本">日本</option>
+	<option value="美国">美国</option>
+	</select>
+	<select id="city">
+	
+	</select>
+</body>
+<script>
+	//创建二维数组来存储数据
+	var arr = new Array(4);
+	arr[0] = ["中国","南京","抚州","衡水","饶阳"];
+	arr[1] = ["美国","华盛顿","纽约"];
+	arr[2] = ["日本","东京","北海道"];
+	function change(value){
+		var city = document.getElementById("city");
+		
+		var options1 = city.getElementsByTagName("option");
+		//判断是否存在options
+		for(var m=0;m<options1.length;m++){
+			var op = options1[m];
+			city.removeChild(op);
+			m--;
+		}
+		for(var i=0;i<arr.length;i++){
+			var arr1=arr[i];
+			var firstvalue = arr1[0];
+			if(firstvalue == value){
+				//alert(firstvalue);
+				for(var j=1;j<arr1.length;j++){
+					var value1=arr1[j];
+					//alert(value1);
+					var options = document.createElement("option");
+					var text1 = document.createTextNode(value1);
+					options.appendChild(text1);
+					city.appendChild(options);//会导致一直叠加，所以需要每次添加的时候都需要置空
+					
+				}
+				//arr city = document.getElementById("city");
+				//city.createElements
+			}
+		}
+		
+	}</script>
+</html>

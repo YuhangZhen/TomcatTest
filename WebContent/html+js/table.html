@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自动生成表格</title>
+</head>
+<body>
+	行<input type="text" id="hang">
+	列<input type="text" id="lie">
+	<input type="button" value="生成" onclick="table();">
+<div id = "table"></div>	
+</body>
+<script>
+	function table(){
+		//获得输入框的值
+		var h = document.getElementById("hang").value;
+		var l= document.getElementById("lie").value;
+		var table="<table border='1' bordercolor='blue'>";//设置table的属性
+		//通过+=来叠加代码
+		for(var i=0;i<h;i++){//循环
+			table +="<tr>"//生成tr属性
+			for(var j=0;j<l;j++){//循环
+				table +="<td>aaaaa</td>"//生成td属性
+			}
+			table+="</tr>"//TR属性结束
+		}
+		table+="</table>"//table结束
+		tab =document.getElementById("table");//获得位置的控制权
+		tab.innerHTML = table;//将代码放到指定位置
+	}
+</script>
+
+</html>

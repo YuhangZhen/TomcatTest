@@ -96,8 +96,8 @@
 		for(var i =0;i<options1.length;i++){
 			var option1 = options1[i];//赋值
 			if(option1.selected == true){
-				s2.appendChild(option1);
-				i--;
+				s2.appendChild(option1);//此时数组的长度会改变，而I却在增大，此时会有误差
+				i--;//让I 时刻归零
 			}
 		}
 	}
