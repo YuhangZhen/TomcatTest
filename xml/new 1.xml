@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="1.css" ?>
+<person>
+	<name>甄宇航</name>
+	<age>25</age>
+	<![CDATA[尝试cdata]]>
+</person>
